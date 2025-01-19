@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_stone"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top20PercentGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <ImageView
+        android:id="@+id/imageForBottom80"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/top20PercentGuideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/roof_bg" />
+
+    <!-- Day Night View -->
+    <View
+        android:id="@+id/dayNight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/dayColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"/>
+
+    <!-- Time of Day TextView -->
+    <TextView
+        android:id="@+id/timeOfDayTextView"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/time_box"
+        android:padding="4dp"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:elevation="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dayNight"
+        app:layout_constraintEnd_toEndOf="@+id/dayNight" />
+
+    <ImageView
+        android:id="@+id/skylineImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/dayNight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/skyline_day"
+        android:layout_marginBottom="-1.5dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/livelihoodGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/dayNight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="8dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <!-- Icon for Livelihood Meter -->
+        <ImageView
+            android:id="@+id/livelihoodIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/status_health"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/livelihoodMeter"
+            app:layout_constraintTop_toBottomOf="@+id/livelihoodMeter"
+            android:contentDescription="@string/livelihood_icon_description" />
+
+        <!-- Livelihood Meter -->
+        <ProgressBar
+            android:id="@+id/livelihoodMeter"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/progress_bar_custom_livelihood"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/livelihoodIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Lamp -->
+
+    <!-- Plants Grid Layout -->
+
+    <ImageView
+        android:id="@+id/lampImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/lamp_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <GridLayout
+        android:id="@+id/plantSlotsGridLayout"
+        android:layout_width="277dp"
+        android:layout_height="386dp"
+        android:layout_marginTop="64dp"
+        android:columnCount="2"
+        android:rowCount="4"
+        app:layout_constraintBottom_toTopOf="@id/meterGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dayNight"
+        app:layout_constraintWidth_percent="0.8">
+
+        <!-- Plants are generated in MainActivity -->
+    </GridLayout>
+
+    <!-- Solar Panels -->
+    <ImageView
+        android:id="@+id/solarPanels"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="320dp"
+        android:src="@drawable/solar_panels"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/plantSlotsGridLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/meterGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/status_background"
+        android:padding="8dp"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plantSlotsGridLayout"
+        tools:layout_editor_absoluteX="0dp">
+
+        <!-- Guideline to equally divide the layout -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/centerGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- Battery Group -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/batteryGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toStartOf="@id/centerGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/plantSlotsGridLayout"
+            tools:ignore="NotSibling">
+
+            <!-- Icon for Energy Levels -->
+            <ImageView
+                android:id="@+id/energyIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/energy"
+                android:elevation="8dp"
+                android:src="@drawable/status_energy"
+                app:layout_constraintBottom_toBottomOf="@id/energyLevelView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/energyLevelView" />
+
+            <!-- Battery Progress Bar -->
+            <com.example.cs205_assignment4.EnergyLevelView
+                android:id="@+id/energyLevelView"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="100"
+                android:progress="50"
+                android:progressDrawable="@drawable/progress_bar_custom_energy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/energyIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Food Stores Group -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/foodGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/centerGuideline"
+            app:layout_constraintTop_toBottomOf="@id/plantSlotsGridLayout"
+            tools:ignore="NotSibling">
+
+            <!-- Icon for Food Stores -->
+            <ImageView
+                android:id="@+id/foodIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/food_icon_description"
+                android:elevation="8dp"
+                android:src="@drawable/status_food"
+                app:layout_constraintBottom_toBottomOf="@id/foodStoresMeter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/foodStoresMeter" />
+
+            <!-- Food Stores Meter -->
+            <ProgressBar
+                android:id="@+id/foodStoresMeter"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:max="100"
+                android:progress="50"
+                android:progressDrawable="@drawable/progress_bar_custom_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/foodIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

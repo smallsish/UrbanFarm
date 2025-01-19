@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="darkBlue">#FF0000FF</color>
+
+    <!-- Define colorPrimary and colorPrimaryVariant -->
+    <color name="colorPrimary">#FF6200EE</color> <!-- Example color, replace with your primary color -->
+    <color name="colorPrimaryVariant">#FF3700B3</color> <!-- Example color, replace with your primary variant color -->
+    <color name="dayColor">#ADD8EF</color> <!-- Define a color for day background -->
+    <color name="nightColor">#00008B</color>
+    <color name="background">#A9A9A9</color>
+    <color name="textColour">#FFAA00</color>
+    <color name="grey_stone">#757575</color>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UrbanFarm</string>
+    <string name="add_food">Add Food</string>
+    <string name="food_stores_0">Food Stores: 0</string>
+    <string name="day_night_label">day/night</string>
+    <string name="battery_100">Battery 100%</string>
+    <string name="food_icon_description">food stores</string>
+    <string name="energy" />
+    <string name="livelihood_icon_description" />
+    <string name="description">put description here\n</string>
+</resources>
