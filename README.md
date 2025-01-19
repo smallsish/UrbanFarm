@@ -1,4 +1,4 @@
-<h1>Harvesting Plants App</h1>
+<h1>Urban Farm Simulator</h1>
 <h3>Overview</h3>
 Welcome to UrbanFarm! The year is 2100. Singapore has finally attained full self-sufficiency in producing its own food and electricity.</br>
 Solar panels, food plots and night-lamps are found on every HDB rooftop, allowing for constant plant growth, day and night.</br>
